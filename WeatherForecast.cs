@@ -1,4 +1,5 @@
 using System;
+using Microsoft.OData.Edm.Vocabularies;
 
 namespace NSwagAppProto01
 {
@@ -7,6 +8,11 @@ namespace NSwagAppProto01
     /// </summary>
     public class WeatherForecast
     {
+        /// <summary>
+        /// Key for OData purpose
+        /// </summary>
+        public string Id { get; set; } = Guid.NewGuid().ToString();
+
         /// <summary>
         /// Date of forecast
         /// </summary>
