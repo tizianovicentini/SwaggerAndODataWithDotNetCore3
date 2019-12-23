@@ -31,6 +31,8 @@ namespace NSwagAppProto01
             services.AddOData();
             services.AddControllers(options => options.EnableEndpointRouting = false)
                 .AddNewtonsoftJson();
+
+            // Workaround necessary for rendering swagger json 
             services.AddMvcCore(options =>
             {
                 foreach (var outputFormatter in options.OutputFormatters.OfType<ODataOutputFormatter>().Where(_ => _.SupportedMediaTypes.Count == 0))
